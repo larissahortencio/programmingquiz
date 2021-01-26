@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import Head from 'next/head';
 import db from '../db.json';
 import Widget from '../src/components/Widget';
 import QuizBackground from '../src/components/QuizBackground';
@@ -18,26 +19,31 @@ export const QuizContainer = styled.div`
 
 export default function Home() {
   return (
-    <QuizBackground backgroundImage={db.bg}>
-      <QuizContainer>
-        <Widget>
-          <Widget.Header>
-            <h1>Quiz de programação web</h1>
-          </Widget.Header>
-          <Widget.Content>
-            <p> Este é o quiz de programação web</p>
-          </Widget.Content>
-        </Widget>
-        <Widget>
-          <Widget.Content>
-            <h1>Quiz</h1>
-            <p> Quiz de programação web</p>
-          </Widget.Content>
-        </Widget>
-        <Footer />
-      </QuizContainer>
-
-      <GitHubCorner />
-    </QuizBackground>
+    <div>
+      <Head>
+        <meta property='og:title' content='Programming Quiz' />
+        <meta property='og:image' content={db.bg} />
+      </Head>
+      <QuizBackground backgroundImage={db.bg}>
+        <QuizContainer>
+          <Widget>
+            <Widget.Header>
+              <h1>Quiz de programação web</h1>
+            </Widget.Header>
+            <Widget.Content>
+              <p> Este é o quiz de programação web</p>
+            </Widget.Content>
+          </Widget>
+          <Widget>
+            <Widget.Content>
+              <h1>Quiz</h1>
+              <p> Quiz de programação web</p>
+            </Widget.Content>
+          </Widget>
+          <Footer />
+        </QuizContainer>
+        <GitHubCorner />
+      </QuizBackground>
+    </div>
   );
 }
