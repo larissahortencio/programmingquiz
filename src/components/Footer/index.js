@@ -38,6 +38,10 @@ export default function Footer(props) {
         Orgulhosamente criado durante a{' '}
         <a href='https://www.alura.com.br/'>
           <span>Imersão React da Alura</span>
+        </a>{' '}
+        por{' '}
+        <a href='https://github.com/LarissaHortencio10'>
+          <span>@larissahortencio</span>
         </a>
       </p>
     </FooterWrapper>
